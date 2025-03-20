@@ -51,15 +51,15 @@ function App() {
         
         {/* 三个功能色块 - 使用w-full确保与上面的色块宽度一致 */}
         <div className="flex flex-row gap-4 mt-6 w-full">
-          <div className="flex-1 bg-blue-50 p-6 text-sm text-gray-800 rounded-md">
+          <div className="flex-1 bg-blue-50 p-6 text-sm text-gray-800 rounded-md whitespace-nowrap">
             <h1 className='text-base font-medium'>选择本地媒体</h1>
             <p>MP4、MP3、AAC、M4A等</p>
           </div>
-          <div className="flex-1 bg-blue-50 p-6 text-sm text-gray-800 rounded-md">
+          <div className="flex-1 bg-blue-50 p-6 text-sm text-gray-800 rounded-md whitespace-nowrap">
             <h1 className='text-base font-medium'>文本转语音</h1>
             <p>支持多种语言</p>
           </div>
-          <div className="flex-1 bg-blue-50 p-6 text-sm text-gray-800 rounded-md">
+          <div className="flex-1 bg-blue-50 p-6 text-sm text-gray-800 rounded-md whitespace-nowrap">
             <h1 className='text-base font-medium'>录制</h1>
             <p>本地实时录音转换文字</p>
           </div>

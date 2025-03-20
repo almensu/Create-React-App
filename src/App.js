@@ -39,8 +39,31 @@ function App() {
         </div>
       </div>
       {/* 右侧主区域 */}
-      <div className="w-3/4 bg-white p-4">
-        <h1>YANGHOOAI2</h1>
+      <div className="flex flex-col bg-white p-4 w-3/4">
+        <div className="bg-white p-4">
+          <h1>欢迎使用YanghooAI</h1>
+        </div>
+        
+        {/* YouTube下载色块 - 设置相同的宽度 */}
+        <div className="w-full bg-blue-50 p-6 text-sm text-gray-500 rounded-md mt-4">
+          <h1>支持 YouTube 视频下载</h1>
+        </div>
+        
+        {/* 三个功能色块 - 使用w-full确保与上面的色块宽度一致 */}
+        <div className="flex flex-row gap-4 mt-6 w-full">
+          <div className="flex-1 bg-blue-50 p-6 text-sm text-gray-800 rounded-md">
+            <h1 className='text-base font-medium'>选择本地媒体</h1>
+            <p>MP4、MP3、AAC、M4A等</p>
+          </div>
+          <div className="flex-1 bg-blue-50 p-6 text-sm text-gray-800 rounded-md">
+            <h1 className='text-base font-medium'>文本转语音</h1>
+            <p>支持多种语言</p>
+          </div>
+          <div className="flex-1 bg-blue-50 p-6 text-sm text-gray-800 rounded-md">
+            <h1 className='text-base font-medium'>录制</h1>
+            <p>本地实时录音转换文字</p>
+          </div>
+        </div>
       </div>
     </div>
   );

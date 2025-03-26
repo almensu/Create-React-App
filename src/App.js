@@ -3,21 +3,50 @@ import VideoCard from "./components/VideoCard";
 import VideoList from "./components/VideoList";
 import VideoPage from "./pages/VideoPage";
 import { Circle, HelpCircle, Film, Search, Camera } from "lucide-react";
+import avatarImage from "./assets/imge.png"; // 导入图片
 
 function App() {
+	// Sample video data
+	const videos = [
+		{
+			id: "1",
+			title: "How to Use DaisyUI in React",
+			thumbnail: "https://i.imgur.com/Z7xJH5e.jpeg",
+			videoId: "dQw4w9WgXcQ",
+		},
+		{
+			id: "2",
+			title: "React Hooks Tutorial for Beginners",
+			thumbnail: "https://i.imgur.com/MPV2FCi.jpeg",
+			videoId: "dpw9EHDh2bM",
+		},
+		{
+			id: "3",
+			title: "Building Modern UIs with TailwindCSS",
+			thumbnail: "https://i.imgur.com/wUvfITT.jpeg",
+			videoId: "mr15Xzb1Ook",
+		},
+		{
+			id: "4",
+			title: "JavaScript Fundamentals for React Developers",
+			thumbnail: "https://i.imgur.com/2eCnbUB.jpeg",
+			videoId: "hdI2bqOjy3c",
+		},
+	];
+
 	return (
 		// 主应用布局结构 左右布局
 		<div className="flex flex-row">
 			{/* 左侧边栏  上下布局*/}
 			<div className="flex flex-col max-w-screen-sm h-screen bg-base-200 border-r">
 				{/* 顶部Logo区域 */}
-				<div className="flex flex-row items-start justify-start mt-4">
-					<div className="avatar placeholder ml-2">
-						<div className="bg-primary text-primary-content rounded-md w-8">
-							<span>Y</span>
+				<div className="flex flex-row items-center justify-start mt-4">
+					<div className="avatar ml-2">
+						<div className="rounded-full w-8 h-8">
+							<img src={avatarImage} alt="Avatar" />
 						</div>
 					</div>
-					<div className="flex flex-col pr-8 text-left mt-2 ml-2">
+					<div className="flex flex-col pr-8 text-left ml-2">
 						<h1 className="text-xs font-medium">
 							YANGHOOAI
 						</h1>
@@ -44,7 +73,7 @@ function App() {
 				</div>
 			</div>
 			{/* 右侧主区域 */}
-			<div className="flex flex-col bg-base-100 p-8 w-3/4">
+			<div className="flex flex-col bg-base-100 p-16 w-3/4">
 				{/* 欢迎 */}
 				<h1 className="text-2xl font-bold mb-6">
 					欢迎使用 YanghooAI
@@ -60,41 +89,34 @@ function App() {
 						<Search size={18} />
 					</button>
 				</div>
+				{/* 功能选区 */}
 				<div className="flex flex-row gap-4 card card-md shadow-sm">
 					<div className="card-body bg-base-200">
 						<h2 className="card-title flex items-center gap-2">
 							<Camera color="gray" size={24} />
-							small Card
+							选择本地媒体
 						</h2>
 						<p className="ml-8">
-							A card component has a figure, a body
-							part, and inside body there are title
-							and actions parts
+							MP4、MP3、AAC、M4A等...
 						</p>
 					</div>
 					<div className="card-body bg-base-200">
 						<h2 className="card-title flex items-center gap-2">
 							<Camera color="gray" size={24} />
-							small Card
+							文本转语音
 						</h2>
-						<p className="ml-8">
-							A card component has a figure, a body
-							part, and inside body there are title
-							and actions parts
-						</p>
+						<p className="ml-8">简单文字转语音</p>
 					</div>
 					<div className="card-body bg-base-200">
 						<h2 className="card-title flex items-center gap-2">
 							<Camera color="gray" size={24} />
-							small Card
+							录制
 						</h2>
-						<p className="ml-8">
-							A card component has a figure, a body
-							part, and inside body there are title
-							and actions parts
-						</p>
+						<p className="ml-8">本地实时录音转换文字</p>
 					</div>
 				</div>
+				{/* 视频列表 */}
+				<VideoList videos={videos} />
 			</div>
 		</div>
 	);
